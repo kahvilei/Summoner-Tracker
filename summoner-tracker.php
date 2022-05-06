@@ -127,7 +127,7 @@ if( ! class_exists( 'Summoner_Tracker' ) ){
         }
 
         public function summoner_tracker_display_general_account() {
-            echo '<p>These settings apply to all Plugin Name functionality.</p>';
+            echo '<p>This plugin requires a riot API key to function. If you do not have an API key yet, <a target="_blank" href = "https://developer.riotgames.com/docs/portal#web-apis_api-keys">go here to apply for one</a>.</p><p><b>Note:</b> if you are using this plugin on a public-facing website, do not use a developer key.</p>';
         }
 
         public function summoner_tracker_render_settings_field($args) {
