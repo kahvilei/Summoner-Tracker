@@ -86,6 +86,15 @@ if (!class_exists('Summoner_Helper')) {
             return $win_rate_color;
         }
 
+        public function get_champ_id($champ_name){
+            global $wpdb;
+            return $wpdb->get_var("SELECT `champion_id` 
+                                         FROM `wp_lol_match_table` 
+                                         WHERE `summoner_name` = '" . $this->summoner_name() ."' 
+                                         AND `champion_name` = '" . $champ_name ."' 
+                                         ");
+        }
+
         public function favorite_champ_id(){
             $champ_ID_list = $this->query_match_list('champion_id');
 

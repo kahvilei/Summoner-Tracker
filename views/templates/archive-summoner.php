@@ -35,7 +35,7 @@ $description = get_the_archive_description();
                     $counter = 0;
                     echo '<div class="summoner-champ-list">';
                         foreach($summoner->favorite_champ_list() as $champ){
-                            echo '<div class = "champ-list-item"><div class="champ - '. $counter++ . ' ">' . ' </div><img class = "champ-pic" src = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/' . $champ . '.png"/><div><span class = "champ">' . $champ . '</span></div></div>';
+                            echo '<div class = "champ-list-item"><div class="champ - '. $counter++ . ' ">' . ' </div><img class = "champ-pic" src = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/' . $summoner->get_champ_id($champ) . '.png"/><div><span class = "champ">' . $champ . '</span></div></div>';
                         }
                     echo '</div>';
                     $nonce = wp_create_nonce("summoner_update_nonce");
