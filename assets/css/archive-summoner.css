@@ -1,0 +1,80 @@
+.summoner-archive-item{
+    width: 38%;
+    margin: 0% 2% 0% 0% !important;
+    padding: 30px;
+    display: inline-grid;
+    background-color: white;
+}
+
+.summoner-details-wrapper{
+    margin-left: 30px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.summoner-icon{
+    border-radius: 50%;
+}
+
+.summoner-archive-wrapper{
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.summoner-header-wrapper{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+.win-rate, .champ {
+    font-weight: 700;
+}
+
+.summoner-champ, .summoner-wins{
+    padding-right: 15px;
+}
+
+.champ-pic{
+    width: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.summoner-stats-wrapper{
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 30px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.champ-list-item {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* Laptop breakpoint */
+
+@media only screen and (max-width: 1800px) {
+    .summoner-archive-item{
+        width: 43%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .summoner-archive-item{
+        width: 95%;
+        margin: 2.5% !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .summoner-title{
+        font-size: 20px;
+    }
+    .summoner-level {
+        font-size: 15px;
+    }
+}
