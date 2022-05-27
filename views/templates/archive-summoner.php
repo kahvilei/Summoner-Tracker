@@ -30,8 +30,8 @@ if (have_posts()):
         echo '</div>';
         if (!is_null($summoner->last_game_time())) {
             echo '<div class="summoner-stats-wrapper">';
-            echo '<div class="summoner-wins">Win Percentage: <span class = "win-rate" style = "color: ' . $summoner->win_rate_color() . ' ">' . $summoner->win_rate() . '%</span></div>';
-            echo '<div class="summoner-champ">Main Champion: </div><img class = "champ-pic" src = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/' . $summoner->favorite_champ_id() . '.png"/><div><span class = "champ">' . $summoner->favorite_champ() . '</span></div>';
+            echo '<div class="summoner-wins">Win Percentage:&nbsp <span class = "win-rate" style = "color: ' . $summoner->win_rate_color() . ' ">' . $summoner->win_rate() . '%</span></div>';
+            echo '<div class="summoner-champ">Main Champion: <img class = "champ-pic" src = "http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/' . $summoner->favorite_champ_id() . '.png"/><div><span class = "champ">' . $summoner->favorite_champ() . '</span></div></div>';
             echo '</div>';
             $counter = 0;
             echo '<div class="summoner-champ-list">';

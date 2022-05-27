@@ -18,7 +18,7 @@
 
 .summoner-archive-wrapper{
     max-width: 2000px;
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,7 +35,9 @@
 }
 
 .summoner-champ, .summoner-wins{
-    padding-right: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 3px 15px 3px 0px;
 }
 
 .champ-pic{
@@ -49,6 +51,7 @@
     padding: 20px;
     margin: 30px 0px 10px 0px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
