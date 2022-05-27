@@ -38,6 +38,8 @@
     display: flex;
     flex-wrap: nowrap;
     padding: 3px 15px 3px 0px;
+    align-content: center;
+    align-items: center;
 }
 
 .champ-pic{
