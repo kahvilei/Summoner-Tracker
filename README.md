@@ -10,3 +10,7 @@ This is a very incomplete WP plugin that tracks LOL summoners. Requires your own
   * main champ
   * most frequently played list
   * basic info (icon, level)
+
+## Planned features
+
+* Summoner Stats widget/block
