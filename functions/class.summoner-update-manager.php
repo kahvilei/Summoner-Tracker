@@ -20,20 +20,29 @@ if (!class_exists('Summoner_Update_Manager')) {
             $this->level_update();
             $this->icon_update();
             $this->match_update();
+            $this->stamp_update();
         }
 
         //updates only in case of timing, should update on load every minute
         public function conditional_summoner_update()
         {
-            if ($this->summoner->time_since_last_edit() <= 60) {
+            echo $this->summoner->time_since_last_edit();
+            if ($this->summoner->time_since_last_edit() >= 60) {
                 $this->level_update();
                 $this->icon_update();
+                $this->match_update();
+                $this->stamp_update();
             }
         }
 
         private function level_update()
         {
             update_post_meta($this->summoner->summoner_id(), 'summoner_level', $this->connector->getSummonerLevel($this->summoner->summoner_name()));
+        }
+
+        private function stamp_update()
+        {
+            update_post_meta($this->summoner->summoner_id(), 'last_query_stamp', (int)current_time('timestamp'));
         }
 
         private function icon_update()

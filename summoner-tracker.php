@@ -28,7 +28,7 @@ if( ! class_exists( 'Summoner_Tracker' ) ){
             $this->define_constants();
             add_action('admin_menu', array( $this, 'add_plugin_admin_menu' ), 9);
 
-            require_once( SUMMONER_TRACKER_PATH . 'post-types/class.summoner.php' );
+            require_once( SUMMONER_TRACKER_PATH . 'post-types/class.summoner-post-type.php' );
             $Summoner_Post_Type = new Summoner_Post_Type();
 
             add_filter( 'archive_template', array( $this, 'load_custom_archive_template' ) );

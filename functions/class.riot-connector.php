@@ -289,11 +289,11 @@ class Lol_Connector {
         $name = strtolower($name);
         $summoner = $this->getSummonerByName($name);
         if (self::DECODE_ENABLED) {
-            return $summoner['summoner_level'];
+            return $summoner['summonerLevel'];
         }
         else {
             $summoner = json_decode($summoner, true);
-            return $summoner['summoner_level'];
+            return $summoner['summonerLevel'];
         }
     }
 

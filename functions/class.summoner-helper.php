@@ -55,7 +55,7 @@ if (!class_exists('Summoner_Helper')) {
         public function time_since_last_edit(){
             $last_edit = (int)get_post_meta($this->post->ID, 'last_query_stamp', true);
             if(!is_null($last_edit)){
-                return $last_edit - (int)current_time('timestamp');
+                return (int)current_time('timestamp') - $last_edit;
             }
             return 100000000;
         }
