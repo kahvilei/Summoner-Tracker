@@ -25,9 +25,18 @@
             <label for="mv_slider_link_url">Region Select</label>
         </th>
         <td>
-            <select name="region_select" id="region_select" required>  
-                <option value="na1" <?php selected( $region, 'na1' ); ?>>North America</option>  
-                <option value="kr" <?php selected( $region, 'kr' ); ?>>Korea</option>               
+            <select name="region_select" id="region_select" required>
+                <option value="br1" <?php selected( $region, 'br1' ); ?>>Brazil</option>
+                <option value="eun1" <?php selected( $region, 'eun1' ); ?>>EU North</option>
+                <option value="euw1" <?php selected( $region, 'euw1' ); ?>>EU West</option>
+                <option value="jp1" <?php selected( $region, 'jp1' ); ?>>Japan</option>
+                <option value="kr" <?php selected( $region, 'kr' ); ?>>Korea</option>
+                <option value="la1" <?php selected( $region, 'la1' ); ?>>Latin America 1</option>
+                <option value="la2" <?php selected( $region, 'la2' ); ?>>Latin America 2</option>
+                <option value="na1" <?php selected( $region, 'na1' ); ?>>North America</option>
+                <option value="oc1" <?php selected( $region, 'oc1' ); ?>>Oceana</option>
+                <option value="tr1" <?php selected( $region, 'tr1' ); ?>>Turkey</option>
+                <option value="ru" <?php selected( $region, 'ru' ); ?>>Russia</option>
             </select>
         </td>
     </tr>               

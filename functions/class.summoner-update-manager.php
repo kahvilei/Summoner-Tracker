@@ -26,7 +26,6 @@ if (!class_exists('Summoner_Update_Manager')) {
         //updates only in case of timing, should update on load every minute
         public function conditional_summoner_update()
         {
-            echo $this->summoner->time_since_last_edit();
             if ($this->summoner->time_since_last_edit() >= 3600) {
                 $this->level_update();
                 $this->icon_update();

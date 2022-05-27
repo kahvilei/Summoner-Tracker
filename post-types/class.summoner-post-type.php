@@ -12,7 +12,7 @@ if (!class_exists('Summoner_Post_Type')) {
             add_action('save_post', array($this, 'save_post'), 10, 2);
             add_filter('manage_summoner_posts_columns', array($this, 'summoner_cpt_columns'));
             add_action('manage_summoner_posts_custom_column', array($this, 'summoner_custom_columns'), 10, 2);
-            add_action('wp_loaded', array($this, 'batch_summoner_updates'));
+            add_action('shutdown', array($this, 'batch_summoner_updates'));
             //add_action('init', array($this, 'summoner_update_button'), 10, 2);
             add_action("wp_ajax_summoner_update_button", array($this, 'summoner_update_button'));
         }

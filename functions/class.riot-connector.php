@@ -82,9 +82,13 @@ class Lol_Connector {
 		$this->PLATFORM = $platform;
 
         $region = 'americas';
-        if($platform == 'na1'){
+        if($platform == 'na1' || $platform == 'na1'){
             $region = 'americas';
-        }  
+        }else if($platform == 'kr'|| $platform == 'jp'){
+            $region = 'asia';
+        }else if($platform == 'euw1' || $platform == 'eun1'){
+            $region = 'europe';
+        }
 
         $this->REGION = $region;
 

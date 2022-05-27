@@ -1,6 +1,6 @@
 .summoner-archive-item{
     width: 38%;
-    margin: 0% 2% 0% 0% !important;
+    margin: 0% 2% 2% 0% !important;
     padding: 30px;
     display: inline-grid;
     background-color: white;
@@ -19,6 +19,9 @@
 .summoner-archive-wrapper{
     max-width: 2000px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .summoner-header-wrapper{
