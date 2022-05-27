@@ -45,41 +45,12 @@ if( ! class_exists( 'Summoner_Tracker' ) ){
 
         public function add_plugin_admin_menu(){
             //add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-            add_menu_page(  $this->plugin_name, 'Summoner Tracker', 'administrator', $this->plugin_name, array( $this, 'display_plugin_admin_dashboard'), 'dashicons-chart-area', 26 );
-
-            //add_submenu_page( '$parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
-            add_submenu_page( $this->plugin_name, 'Summoner Tracker Settings', 'Settings', 'administrator', $this->plugin_name.'-settings', array( $this, 'display_plugin_admin_settings'));
+            add_menu_page(  $this->plugin_name, 'Summoner Tracker', 'administrator', $this->plugin_name, null, 'dashicons-chart-area', 26 );
+            add_submenu_page( $this->plugin_name, 'Settings', 'Settings', 'administrator', $this->plugin_name, array( $this, 'display_plugin_admin_dashboard'));
         }
 
         public function display_plugin_admin_dashboard() {
             require_once SUMMONER_TRACKER_PATH . 'views/'.$this->plugin_name.'-admin-display.php';
-        }
-
-        public function display_plugin_admin_settings() {
-            // set this var to be used in the settings-display view
-            $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
-            if(isset($_GET['error_message'])){
-                add_action('admin_notices', array($this, 'plugin_name_settings_messages'));
-                do_action( 'admin_notices', $_GET['error_message'] );
-            }
-            require_once 'partials/'.$this->plugin_name.'-admin-settings-display.php';
-        }
-
-        public function plugin_name_settings_messages($error_message){
-            switch ($error_message) {
-                case '1':
-                    $message = __( 'There was an error adding this setting. Please try again.  If this persists, shoot me an email.', 'kat@kathrynhuff.com' );
-                    $err_code = esc_attr( 'plugin_name_example_setting' );
-                    $setting_field = 'plugin_name_example_setting';
-                    break;
-            }
-            $type = 'error';
-            add_settings_error(
-                $setting_field,
-                $err_code,
-                $message,
-                $type
-            );
         }
 
         public function register_and_build_fields() {

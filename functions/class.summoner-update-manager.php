@@ -27,7 +27,7 @@ if (!class_exists('Summoner_Update_Manager')) {
         public function conditional_summoner_update()
         {
             echo $this->summoner->time_since_last_edit();
-            if ($this->summoner->time_since_last_edit() >= 60) {
+            if ($this->summoner->time_since_last_edit() >= 3600) {
                 $this->level_update();
                 $this->icon_update();
                 $this->match_update();

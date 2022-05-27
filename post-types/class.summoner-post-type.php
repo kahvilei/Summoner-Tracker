@@ -40,7 +40,7 @@ if (!class_exists('Summoner_Post_Type')) {
                     'supports' => false,
                     'hierarchical' => false,
                     'show_ui' => true,
-                    'show_in_menu' => true,
+                    'show_in_menu' => 'summoner-tracker',
                     'menu_position' => 5,
                     'show_in_admin_bar' => true,
                     'show_in_nav_menus' => true,
