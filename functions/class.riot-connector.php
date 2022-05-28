@@ -64,6 +64,7 @@ class Lol_Connector {
 	private static $errorCodes = array(0   => 'NO_RESPONSE',
 									   400 => 'BAD_REQUEST',
 									   401 => 'UNAUTHORIZED',
+                                       403 => 'FORBIDDEN',
 									   404 => 'NOT_FOUND',
 									   429 => 'RATE_LIMIT_EXCEEDED',
 									   500 => 'SERVER_ERROR',

@@ -58,7 +58,14 @@ if (!class_exists('Summoner_Post_Type')) {
         {
             foreach($this->summoner_list() as $summoner_post){
                 $summoner = new Summoner_Update_Manager($summoner_post);
-                $summoner->conditional_summoner_update();
+                if($summoner->connector_status == "200"){
+                    $summoner->conditional_summoner_update();
+                }elseif($summoner->connector_status == "401" || $summoner->connector_status == "403"){
+                    echo '<div class="summoner-stats-wrapper"><div class="no-summoner-match-data">API key rejected by riot. Please verify you are using a valid API key. <a>Click here for more info</a> </div></div>';
+                    return;
+                }else{
+                    echo '<div class="summoner-stats-wrapper"><div class="no-summoner-match-data">There was an error updating user "' . get_post_meta($summoner_post, 'id_text'). $summoner->connector_status. '", make sure their username is still correct.</div></div>';
+                }
             }
         }
 

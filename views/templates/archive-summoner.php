@@ -5,8 +5,8 @@ get_header();
 
 $description = get_the_archive_description();
 ?>
-
-<header class="page-header alignwide">
+<div class="summoner-archive-page" >
+<header class="page-header">
 
     <?php echo '<h1 class="page-title"> Summoner Watch </h1>'; ?>
 </header><!-- .page-header -->
@@ -49,7 +49,7 @@ if (have_posts()):
 
     endwhile;
 endif;
-echo '</div>';
+echo '</div> </div>';
 ?>
 
 
