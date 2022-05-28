@@ -53,7 +53,7 @@ if (!class_exists('Summoner_Post_Type')) {
             );
         }
 
-        // runs a check on summoners, makes sure everything has been updated at least in the past hour
+        // runs a check on summoners, makes sure everything has been updated at least in the past hour (time check in update manager) - this runs on page load
         public function batch_summoner_updates()
         {
             foreach($this->summoner_list() as $summoner_post){
@@ -61,10 +61,10 @@ if (!class_exists('Summoner_Post_Type')) {
                 if($summoner->connector_status == "200"){
                     $summoner->conditional_summoner_update();
                 }elseif($summoner->connector_status == "401" || $summoner->connector_status == "403"){
-                    echo '<div class="summoner-stats-wrapper"><div class="no-summoner-match-data">API key rejected by riot. Please verify you are using a valid API key. <a>Click here for more info</a> </div></div>';
+                    echo '<div class="lol-connection-error warning-box"><div class="warning-text">API key rejected by riot. Please verify you are using a valid API key. <a>Click here for more info</a> </div></div>';
                     return;
                 }else{
-                    echo '<div class="summoner-stats-wrapper"><div class="no-summoner-match-data">There was an error updating user "' . get_post_meta($summoner_post, 'id_text'). $summoner->connector_status. '", make sure their username is still correct.</div></div>';
+                    echo '<div class="summoner-error warning-box"><div class="warning-text">There was an error updating user "' . get_post_meta($summoner_post, 'id_text'). $summoner->connector_status. '", make sure their username is still correct.</div></div>';
                 }
             }
         }
@@ -77,10 +77,15 @@ if (!class_exists('Summoner_Post_Type')) {
             $this->summoner_data_refresh($_REQUEST["post_id"]);
         }
 
+        //runs summoner update, without a time check
         public static function summoner_data_refresh($post_id)
         {
             $summoner = new Summoner_Update_Manager(get_post($post_id));
-            $summoner->run_summoner_update();
+            if($summoner->connector_status == "200") {
+                $summoner->run_summoner_update();
+            }else{
+                echo '<div class="summoner-error warning-box"><div class="warning-text">There was an error updating user "' . get_post_meta($post_id, 'id_text'). $summoner->connector_status. '", make sure their username is correct.</div></div>';
+            }
         }
 
         public function summoner_cpt_columns($columns)

@@ -1,0 +1,9 @@
+.warning-box{
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background-color: #ffd4c4;
+    padding: 20px;
+    max-width: 400px;
+}
