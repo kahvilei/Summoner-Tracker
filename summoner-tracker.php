@@ -31,6 +31,7 @@ if( ! class_exists( 'Summoner_Tracker' ) ){
 
             add_filter( 'archive_template', array( $this, 'load_custom_archive_template' ) );
             add_filter( 'single_template', array( $this, 'load_custom_single_template' ) );
+            add_action('wp_enqueue_scripts', array( $this, 'set_up_styles' ));
 
         }
 
@@ -57,6 +58,11 @@ if( ! class_exists( 'Summoner_Tracker' ) ){
                     $tpl = SUMMONER_TRACKER_PATH . 'views/templates/single-summoner.php';
                 }
             return $tpl;
+        }
+
+        public function set_up_styles() {
+            wp_register_style( 'summonertrackermainstyles', SUMMONER_TRACKER_PATH . 'assets/css/summoner-main.css' );
+            wp_enqueue_style( 'summonertrackermainstyles' );
         }
 
         public static function activate(){
